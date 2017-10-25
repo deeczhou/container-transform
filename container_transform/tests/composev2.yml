@@ -18,3 +18,5 @@ services:
       options:
         tag: web
         gelf-address: "udp://127.0.0.1:12900"
+    ulimits:
+      nofile: "65535:65535"

@@ -343,6 +343,16 @@ class ComposeTransformer(BaseTransformer):
     def emit_labels(self, labels):
         return labels
 
+    def ingest_ulimits(self, ulimits):
+        output = {}
+        if type(ulimits) is dict:
+            for key, value in ulimits.items():
+                output[str(key)] = str(value)
+        return output
+
+    def emit_ulimits(self, ulimits):
+        return ulimits
+
     def ingest_logging(self, logging):
         return logging
 
